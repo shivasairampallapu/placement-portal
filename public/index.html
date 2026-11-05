@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Placement Management Portal - Training &amp; Placement Cell</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- ==================== INSTITUTIONAL NAVBAR ==================== -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <a href="/" class="nav-brand">
+        <div class="nav-logo">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div class="nav-brand-text">
+          <div class="nav-brand-title">CAMPUS PLACEMENT MANAGEMENT PORTAL</div>
+          <span class="nav-brand-subtitle">Training &amp; Placement Cell &bull; University Intranet</span>
+        </div>
+      </a>
+    </div>
+
+    <div id="nav-user-panel" class="nav-user hidden">
+      <div class="nav-user-chip">
+        <div class="user-avatar" id="nav-avatar">U</div>
+        <div class="nav-user-info">
+          <span id="nav-username" class="nav-user-name">User</span>
+          <span id="nav-userrole" class="nav-user-role">Student</span>
+        </div>
+      </div>
+      <button id="logout-btn" class="btn btn-logout btn-sm" title="Sign out of your session">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        <span>Sign Out</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN APPLICATION CONTAINER ==================== -->
+  <main class="app-main">
+
+    <!-- ==================== AUTHENTICATION SECTION ==================== -->
+    <section id="auth-section">
+      <div class="login-layout">
+
+        <!-- Institutional Welcome / Hero Column -->
+        <div class="login-hero">
+          <!-- Subtle Mortarboard Graduation Cap Watermark -->
+          <div class="hero-watermark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+
+          <div class="hero-badge">OFFICIAL UNIVERSITY PORTAL</div>
+          <h1 class="hero-title">Campus Placement<br>Management Portal</h1>
+          <p class="hero-desc">
+            Connect with top companies, track your applications, and build your future.
+          </p>
+
+          <div class="hero-features">
+            <div class="hero-feature-item">
+              <div class="feature-icon-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 21h18"/><path d="M9 8h1"/><path d="M9 12h1"/><path d="M9 16h1"/><path d="M14 8h1"/><path d="M14 12h1"/><path d="M14 16h1"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <strong>Top Recruiters</strong>
+                <span>Get placed with leading companies</span>
+              </div>
+            </div>
+
+            <div class="hero-feature-item">
+              <div class="feature-icon-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <strong>Track Applications</strong>
+                <span>Stay updated in real-time</span>
+              </div>
+            </div>
+
+            <div class="hero-feature-item">
+              <div class="feature-icon-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <strong>Build Your Career</strong>
+                <span>More opportunities, brighter future</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Auth Forms Column -->
+        <div class="login-side">
+
+          <!-- Login Card -->
+          <div id="login-card" class="auth-card">
+            <div class="auth-card-header">
+              <h2 class="auth-title">Welcome Back!</h2>
+              <p class="auth-subtitle">Login to access your placement portal</p>
+            </div>
+
+            <!-- Segmented Role Switcher -->
+            <div class="role-switch">
+              <button type="button" class="role-btn active" data-login-role="student">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span>Student</span>
+              </button>
+              <button type="button" class="role-btn" data-login-role="officer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                <span>Placement Officer</span>
+              </button>
+            </div>
+
+            <form id="login-form" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="login-email">Email Address</label>
+                <div class="input-icon-wrap">
+                  <svg class="input-lead-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+                  <input type="email" id="login-email" class="form-control with-lead-icon" placeholder="Enter your email address" required autocomplete="email">
+                </div>
+                <span class="field-error" id="err-login-email"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="login-password">Password</label>
+                <div class="input-icon-wrap password-wrap">
+                  <svg class="input-lead-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <input type="password" id="login-password" class="form-control with-lead-icon" placeholder="Enter your password" required autocomplete="current-password">
+                  <button type="button" class="toggle-pw eye-btn" data-target="login-password" aria-label="Show password" title="Show password">
+                  <svg class="eye-icon eye-hide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/></svg>   
+                  <svg class="eye-icon eye-show" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                   
+                  </button>
+                </div>
+                <span class="field-error" id="err-login-password"></span>
+              </div>
+
+              <div class="login-meta-row">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="login-remember" checked>
+                  <span>Remember Me</span>
+                </label>
+                <a href="#" id="forgot-link" class="link-subtle">Forgot Password?</a>
+              </div>
+
+              <button type="submit" id="login-submit-btn" class="btn btn-primary btn-block btn-lg btn-login-action">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                <span>Login</span>
+              </button>
+            </form>
+
+            <div class="auth-divider">
+              <span>or</span>
+            </div>
+            <p class="auth-hint-credentials">Use your college credentials to login &bull; <a href="#" id="contact-link" class="link-subtle">Contact Admin</a></p>
+
+            <div class="auth-card-footer">
+              <span id="toggle-register-link">
+                Don't have an account? <a href="#" id="show-register-btn" class="link-primary">Register as Student</a>
+              </span>
+            </div>
+          </div>
+
+          <!-- Registration Card -->
+          <div id="register-card" class="auth-card hidden">
+            <div class="auth-card-header">
+              <h2 class="auth-title">Student Registration</h2>
+              <p class="auth-subtitle">Create placement profile with academic records</p>
+            </div>
+
+            <form id="register-form" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="reg-fullname">Full Name <span class="required">*</span></label>
+                <input type="text" id="reg-fullname" class="form-control" placeholder="e.g. Rahul Verma" required>
+                <span class="field-error" id="err-reg-fullname"></span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="reg-email">College Email <span class="required">*</span></label>
+                  <input type="email" id="reg-email" class="form-control" placeholder="e.g. rahul.verma@college.edu" required>
+                  <span class="field-error" id="err-reg-email"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="reg-password">Password <span class="required">*</span></label>
+                  <div class="password-wrap">
+                    <input type="password" id="reg-password" class="form-control" placeholder="Minimum 6 characters" minlength="6" required>
+                    <button type="button" class="toggle-pw eye-btn" data-target="reg-password" aria-label="Show password" title="Show password">
+                      <svg class="eye-icon eye-show" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                      <svg class="eye-icon eye-hide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/></svg>
+                    </button>
+                  </div>
+                  <span class="field-error" id="err-reg-password"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="reg-roll">Roll / Hall Ticket No <span class="required">*</span></label>
+                  <input type="text" id="reg-roll" class="form-control" required placeholder="e.g. 22R11A0501" maxlength="50">
+                  <span class="field-error" id="err-reg-roll"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="reg-dept">Department / Branch <span class="required">*</span></label>
+                  <select id="reg-dept" class="form-control" required>
+                    <option value="">-- Select Branch --</option>
+                    <option value="CSE">Computer Science &amp; Engineering (CSE)</option>
+                    <option value="IT">Information Technology (IT)</option>
+                    <option value="ECE">Electronics &amp; Communication (ECE)</option>
+                    <option value="EEE">Electrical &amp; Electronics (EEE)</option>
+                    <option value="MECH">Mechanical Engineering (MECH)</option>
+                    <option value="CIVIL">Civil Engineering (CIVIL)</option>
+                  </select>
+                  <span class="field-error" id="err-reg-dept"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="reg-batch">Graduation Year <span class="required">*</span></label>
+                  <input type="number" id="reg-batch" class="form-control" required placeholder="2022" min="2000" max="2100">
+                  <span class="field-error" id="err-reg-batch"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="reg-cgpa">Official CGPA <span class="required">*</span></label>
+                  <input type="number" step="0.01" id="reg-cgpa" class="form-control" required placeholder="8.50" min="0" max="10.00">
+                  <span class="field-error" id="err-reg-cgpa"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="reg-skills">Technical Skills &amp; Proficiencies <span class="required">*</span></label>
+                <input type="text" id="reg-skills" class="form-control" required placeholder="e.g. Python, Java, Data Structures, SQL, React" maxlength="2000">
+                <span class="field-error" id="err-reg-skills"></span>
+              </div>
+
+              <button type="submit" id="register-submit-btn" class="btn btn-primary btn-block btn-lg">
+                <span>Create Student Account</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </form>
+
+            <div class="auth-card-footer">
+              Already registered? <a href="#" id="show-login-btn" class="link-primary">Back to Sign In</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STUDENT PORTAL ==================== -->
+    <section id="student-portal" class="hidden">
+      <div class="portal-layout">
+
+        <!-- Mobile Drawer Overlay Backdrop -->
+        <div class="sidebar-backdrop" onclick="App.toggleSidebar(false)"></div>
+
+        <!-- Student Professional Sidebar -->
+        <aside class="app-sidebar" id="student-sidebar">
+          <div class="sidebar-header">
+            <div class="sidebar-badge">STUDENT PORTAL</div>
+            <div class="sidebar-sub">Training &amp; Placement Cell</div>
+          </div>
+
+          <nav class="sidebar-nav">
+            <button class="sidebar-link tab-btn active" data-role="student" data-tab="dashboard">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span>Dashboard</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="student" data-tab="profile">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>My Profile</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="student" data-tab="drives">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              <span>Companies</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="student" data-tab="applications">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <span>My Applications</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="student" data-tab="shortlist">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              <span>Shortlist</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="student" data-tab="rounds">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Placement Rounds</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="student" data-tab="results">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+              <span>Results</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="student" data-tab="notifications">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              <span>Notices</span>
+              <span id="notif-count-badge" class="sidebar-badge-count hidden">0</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="student" data-tab="password">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span>Security</span>
+            </button>
+          </nav>
+
+          <div class="sidebar-footer">
+            <div class="sidebar-support-card">
+              <span class="support-title">Placement Helpdesk</span>
+              <span class="support-contact">training@campus.edu.in</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="portal-main">
+
+          <!-- Top Action Bar with Mobile Hamburger & Breadcrumb -->
+          <div class="portal-topbar">
+            <button type="button" class="sidebar-toggle-btn" aria-label="Toggle Navigation">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <div class="portal-breadcrumb">
+              <span class="breadcrumb-root">Student Portal</span>
+              <span class="breadcrumb-separator">/</span>
+              <span id="student-current-tab-title" class="breadcrumb-active">Dashboard Overview</span>
+            </div>
+          </div>
+
+          <!-- Student Dashboard Tab -->
+          <div id="student-tab-dashboard" class="tab-pane">
+            <div id="student-profile-alert" class="alert alert-warning hidden">
+              <div>
+                <strong>Action Required:</strong> Please complete your academic profile (Roll Number, Branch, CGPA, Skills) in the 
+                <a href="#" onclick="App.switchTab('student','profile');return false;" style="font-weight:bold;color:inherit;text-decoration:underline">Academic Profile tab</a> 
+                to enable placement applications.
+              </div>
+            </div>
+
+            <!-- Welcome Card -->
+            <div class="card welcome-banner-card">
+              <div class="welcome-text-wrap">
+                <div class="welcome-title">Welcome back, <span id="student-welcome-name">Student</span>!</div>
+                <p class="welcome-sub">
+                  Campus Placement Portal &bull; Discover eligible recruiting companies, track application review stages, and view offer letters.
+                </p>
+              </div>
+              <div class="welcome-action-wrap">
+                <button class="btn btn-primary btn-sm" onclick="App.switchTab('student','drives')">View Open Drives</button>
+              </div>
+            </div>
+
+            <!-- Student Metrics Cards -->
+            <div class="grid grid-cols-4" style="margin-bottom:1.5rem">
+              <div class="stat-card">
+                <div class="stat-icon-wrap stat-icon-blue">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-title">Eligible Drives</span>
+                  <div id="stat-eligible-drives" class="stat-value">0</div>
+                  <span class="stat-subtext">Criteria matched</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon-wrap stat-icon-navy">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-title">Applications</span>
+                  <div id="stat-applied-drives" class="stat-value">0</div>
+                  <span class="stat-subtext">Submitted</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon-wrap stat-icon-amber">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-title">Shortlisted</span>
+                  <div id="stat-shortlisted-drives" class="stat-value">0</div>
+                  <span class="stat-subtext">Screening cleared</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon-wrap stat-icon-green">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-title">Offers / Selected</span>
+                  <div id="stat-selected-drives" class="stat-value">0</div>
+                  <span class="stat-subtext">Final placement offers</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Two-column Dashboard Sections -->
+            <div class="grid grid-cols-2">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">Upcoming Application Deadlines</div>
+                </div>
+                <div id="student-upcoming-deadlines">
+                  <p class="form-hint">Loading deadlines...</p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">Latest Placement Announcements</div>
+                </div>
+                <div id="student-dashboard-notifications">
+                  <p class="form-hint">Loading notices...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Student Profile Tab -->
+          <div id="student-tab-profile" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">My Academic &amp; Professional Profile</div>
+                  <p class="card-subtitle">Official academic records are managed by the Placement Office</p>
+                </div>
+                <span class="badge badge-neutral">Official Record</span>
+              </div>
+
+              <form id="student-profile-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="profile-fullname">Student Full Name <span class="required">*</span></label>
+                    <input type="text" id="profile-fullname" class="form-control" required maxlength="120">
+                    <span class="field-error" id="err-profile-fullname"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="profile-email">Institutional College Email (Read-only)</label>
+                    <input type="email" id="profile-email" class="form-control" disabled>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="profile-roll">Roll / Hall Ticket No (Locked)</label>
+                    <input type="text" id="profile-roll" class="form-control" readonly required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="profile-dept">Department / Branch (Locked)</label>
+                    <input type="text" id="profile-dept" class="form-control" readonly required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="profile-batch">Graduation Batch (Locked)</label>
+                    <input type="number" id="profile-batch" class="form-control" readonly required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="profile-cgpa">Official CGPA (Locked)</label>
+                    <input type="number" step="0.01" id="profile-cgpa" class="form-control" readonly required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="profile-skills">Technical Proficiencies &amp; Skills <span class="required">*</span></label>
+                  <textarea id="profile-skills" class="form-control" rows="3" placeholder="e.g. Python, Java, Data Structures, SQL, REST APIs" required maxlength="2000"></textarea>
+                  <span class="field-error" id="err-profile-skills"></span>
+                </div>
+
+                <div class="section-divider-title">Coding Profiles &amp; Professional Links</div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="profile-github">GitHub Profile URL</label>
+                    <input type="url" id="profile-github" class="form-control" placeholder="https://github.com/username" maxlength="255">
+                    <span class="field-error" id="err-profile-github"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="profile-linkedin">LinkedIn Profile URL</label>
+                    <input type="url" id="profile-linkedin" class="form-control" placeholder="https://linkedin.com/in/username" maxlength="255">
+                    <span class="field-error" id="err-profile-linkedin"></span>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="profile-leetcode">LeetCode Profile URL</label>
+                    <input type="url" id="profile-leetcode" class="form-control" placeholder="https://leetcode.com/username" maxlength="255">
+                    <span class="field-error" id="err-profile-leetcode"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="profile-hackerrank">HackerRank Profile URL</label>
+                    <input type="url" id="profile-hackerrank" class="form-control" placeholder="https://hackerrank.com/username" maxlength="255">
+                    <span class="field-error" id="err-profile-hackerrank"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="profile-codechef">CodeChef Profile URL</label>
+                    <input type="url" id="profile-codechef" class="form-control" placeholder="https://codechef.com/users/username" maxlength="255">
+                    <span class="field-error" id="err-profile-codechef"></span>
+                  </div>
+                </div>
+
+                <div style="margin-top:1.5rem">
+                  <button type="submit" id="save-profile-btn" class="btn btn-primary">Save Profile Changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Student Drives Tab -->
+          <div id="student-tab-drives" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Placement Drives</div>
+                  <p class="card-subtitle">Explore active recruitment drives verified for your graduation batch</p>
+                </div>
+                <div class="header-action-wrap">
+                  <input type="text" id="student-drives-search" class="form-control header-select-control" placeholder="Filter by company, role, skills...">
+                </div>
+              </div>
+              <div id="student-drives-list">
+                <p class="form-hint">Loading placement drives...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Student Applications Tab -->
+          <div id="student-tab-applications" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">My Applied Placement Drives</div>
+                  <p class="card-subtitle">Real-time status, merit rankings, round marks, and final selection offers</p>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Job Title &amp; Company</th>
+                      <th>Package (LPA)</th>
+                      <th>Application Status</th>
+                      <th>Shortlist Rank</th>
+                      <th>Interview Rounds</th>
+                      <th>Final Decision &amp; Offer</th>
+                      <th>Applied On</th>
+                    </tr>
+                  </thead>
+                  <tbody id="student-applications-tbody">
+                    <tr><td colspan="7" style="text-align:center;color:var(--text-muted)">Loading applications...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Student Shortlist Tab -->
+          <div id="student-tab-shortlist" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Published Shortlists &amp; Participation Order</div>
+                  <p class="card-subtitle">Automatic CGPA-ranked shortlists published by the Placement Officer</p>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Company</th>
+                      <th>Job Title</th>
+                      <th>Merit Rank / Order</th>
+                      <th>Package (LPA)</th>
+                      <th>Selection Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="student-shortlist-tbody">
+                    <tr><td colspan="5" style="text-align:center;color:var(--text-muted)">Loading shortlists...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Student Placement Rounds Tab -->
+          <div id="student-tab-rounds" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Placement Rounds &amp; Intermediate Schedules</div>
+                  <p class="card-subtitle">Interview stages, qualification outcomes, and candidate evaluations</p>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Company</th>
+                      <th>Job Title</th>
+                      <th>Round Name &amp; Sequence</th>
+                      <th>Qualification Status</th>
+                      <th>Evaluation Score</th>
+                      <th>Interviewer Feedback</th>
+                    </tr>
+                  </thead>
+                  <tbody id="student-rounds-tbody">
+                    <tr><td colspan="6" style="text-align:center;color:var(--text-muted)">Loading placement rounds...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Student Results Tab -->
+          <div id="student-tab-results" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Final Selection Decisions &amp; Job Offers</div>
+                  <p class="card-subtitle">Official campus placement results and confirmed compensation packages</p>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Company</th>
+                      <th>Job Title</th>
+                      <th>Final Status</th>
+                      <th>Offered Package</th>
+                      <th>Offer Details</th>
+                    </tr>
+                  </thead>
+                  <tbody id="student-results-tbody">
+                    <tr><td colspan="5" style="text-align:center;color:var(--text-muted)">Loading final placement results...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Student Notifications Tab -->
+          <div id="student-tab-notifications" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Placement Cell Notices</div>
+                  <p class="card-subtitle">Official alerts regarding shortlisted batches, test schedules, and results</p>
+                </div>
+                <button id="student-mark-all-read" class="btn btn-secondary btn-sm">Mark All as Read</button>
+              </div>
+              <div id="student-notifications-list">
+                <p class="form-hint">Loading notifications...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Student Password Tab -->
+          <div id="student-tab-password" class="tab-pane hidden">
+            <div class="card card-narrow">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Security &amp; Change Password</div>
+                  <p class="card-subtitle">Update your portal account credentials</p>
+                </div>
+              </div>
+              <form class="cp-form" novalidate>
+                <div class="form-group">
+                  <label class="form-label">Current Password <span class="required">*</span></label>
+                  <div class="password-wrap">
+                    <input type="password" name="current" class="form-control" required>
+                    <button type="button" class="toggle-pw eye-btn" data-target-name="current" aria-label="Show password" title="Show password">
+                      <svg class="eye-icon eye-show" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                      <svg class="eye-icon eye-hide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/></svg>
+                    </button>
+                  </div>
+                  <span class="field-error"></span>
+                  <span class="form-hint">Students: your first password is your Roll Number in CAPITAL letters.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">New Password (minimum 6 characters) <span class="required">*</span></label>
+                  <div class="password-wrap">
+                    <input type="password" name="new" class="form-control" minlength="6" maxlength="72" required>
+                    <button type="button" class="toggle-pw eye-btn" data-target-name="new" aria-label="Show password" title="Show password">
+                      <svg class="eye-icon eye-show" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                      <svg class="eye-icon eye-hide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/></svg>
+                    </button>
+                  </div>
+                  <span class="field-error"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Confirm New Password <span class="required">*</span></label>
+                  <div class="password-wrap">
+                    <input type="password" name="confirm" class="form-control" minlength="6" maxlength="72" required>
+                    <button type="button" class="toggle-pw eye-btn" data-target-name="confirm" aria-label="Show password" title="Show password">
+                      <svg class="eye-icon eye-show" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                      <svg class="eye-icon eye-hide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/></svg>
+                    </button>
+                  </div>
+                  <span class="field-error"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Password</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PLACEMENT OFFICER PORTAL ==================== -->
+    <section id="officer-portal" class="hidden">
+      <div class="portal-layout">
+
+        <!-- Mobile Drawer Overlay Backdrop -->
+        <div class="sidebar-backdrop" onclick="App.toggleSidebar(false)"></div>
+
+        <!-- Placement Officer Professional Sidebar -->
+        <aside class="app-sidebar" id="officer-sidebar">
+          <div class="sidebar-header">
+            <div class="sidebar-badge sidebar-badge-officer">OFFICER CONSOLE</div>
+            <div class="sidebar-sub">Training &amp; Placement Cell</div>
+          </div>
+
+          <nav class="sidebar-nav">
+            <button class="sidebar-link tab-btn active" data-role="officer" data-tab="dashboard">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              <span>Dashboard</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="officer" data-tab="directory">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span>Students</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="officer" data-tab="companies">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M9 8h1"/><path d="M9 12h1"/><path d="M9 16h1"/><path d="M14 8h1"/><path d="M14 12h1"/><path d="M14 16h1"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
+              <span>Companies</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="officer" data-tab="drives">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              <span>Placement Drives</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="officer" data-tab="applications">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span>Applications</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="officer" data-tab="shortlist">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              <span>Shortlist Management</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="officer" data-tab="rounds">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Placement Rounds</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="officer" data-tab="results">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+              <span>Results Management</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="officer" data-tab="announcements">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              <span>Announcements</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="officer" data-tab="officers">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+              <span>Add Officer</span>
+            </button>
+            <button class="sidebar-link tab-btn" data-role="officer" data-tab="password">
+              <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span>Security &amp; Password</span>
+            </button>
+          </nav>
+
+          <div class="sidebar-footer">
+            <div class="sidebar-support-card">
+              <span class="support-title">Administrator Session</span>
+              <span class="support-contact">Placement Cell Operations</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="portal-main">
+
+          <!-- Top Action Bar with Mobile Hamburger & Breadcrumb -->
+          <div class="portal-topbar">
+            <button type="button" class="sidebar-toggle-btn" aria-label="Toggle Navigation">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <div class="portal-breadcrumb">
+              <span class="breadcrumb-root">Officer Portal</span>
+              <span class="breadcrumb-separator">/</span>
+              <span id="officer-current-tab-title" class="breadcrumb-active">Dashboard Overview</span>
+            </div>
+          </div>
+
+          <!-- Officer Dashboard Tab -->
+          <div id="officer-tab-dashboard" class="tab-pane">
+            <div class="grid grid-cols-3" style="margin-bottom:1.5rem">
+              <div class="stat-card">
+                <div class="stat-icon-wrap stat-icon-navy">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-title">Registered Students</span>
+                  <div id="stat-total-students" class="stat-value">0</div>
+                  <span class="stat-subtext">Active student records</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon-wrap stat-icon-blue">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-title">Hiring Partners</span>
+                  <div id="stat-total-companies" class="stat-value">0</div>
+                  <span class="stat-subtext">Registered companies</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon-wrap stat-icon-navy">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-title">Placement Drives</span>
+                  <div id="stat-total-drives" class="stat-value">0</div>
+                  <span class="stat-subtext">Recruitment drives</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon-wrap stat-icon-blue">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-title">Total Applications</span>
+                  <div id="stat-total-apps" class="stat-value">0</div>
+                  <span class="stat-subtext">Candidate submissions</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon-wrap stat-icon-amber">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/></svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-title">Shortlisted Candidates</span>
+                  <div id="stat-shortlisted-students" class="stat-value">0</div>
+                  <span class="stat-subtext">Approved in shortlists</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon-wrap stat-icon-green">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-title">Placed / Selected</span>
+                  <div id="stat-placed-students" class="stat-value">0</div>
+                  <span class="stat-subtext">Job offers issued</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon-wrap stat-icon-amber">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-title">Highest CTC Offer</span>
+                  <div id="stat-highest-pkg" class="stat-value">0 LPA</div>
+                  <span class="stat-subtext">Premier job package</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon-wrap stat-icon-blue">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-title">Average Package</span>
+                  <div id="stat-avg-pkg" class="stat-value">0 LPA</div>
+                  <span class="stat-subtext">Across accepted offers</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon-wrap stat-icon-green">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-title">Placement Rate</span>
+                  <div id="stat-placement-rate" class="stat-value">0%</div>
+                  <span class="stat-subtext">Enrolled students placed</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="margin-bottom:1.5rem">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Department-wise Placement Performance</div>
+                  <p class="card-subtitle">Real-time candidate placement statistics across engineering branches</p>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Branch / Department</th>
+                      <th>Registered Students</th>
+                      <th>Placed Students</th>
+                      <th>Placement Rate</th>
+                      <th>Highest CTC</th>
+                    </tr>
+                  </thead>
+                  <tbody id="officer-dept-stats-tbody">
+                    <tr><td colspan="5" style="text-align:center;color:var(--text-muted)">Loading branch metrics...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Recent Application Activity</div>
+                  <p class="card-subtitle">Real-time candidate submissions across active placement drives</p>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Student Name</th>
+                      <th>Company</th>
+                      <th>Job Title</th>
+                      <th>Status</th>
+                      <th>Updated On</th>
+                    </tr>
+                  </thead>
+                  <tbody id="officer-recent-activity-tbody">
+                    <tr><td colspan="5" style="text-align:center;color:var(--text-muted)">Loading recent activity...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Officer Companies Tab -->
+          <div id="officer-tab-companies" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title" id="comp-form-title">Add Recruiting Partner Company</div>
+                  <p class="card-subtitle">Register visiting companies for campus recruitment drives</p>
+                </div>
+              </div>
+              <form id="officer-company-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="comp-name">Company Legal Name <span class="required">*</span></label>
+                    <input type="text" id="comp-name" class="form-control" placeholder="e.g. Tata Consultancy Services (TCS)" required maxlength="150">
+                    <span class="field-error" id="err-comp-name"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="comp-website">Official Website URL</label>
+                    <input type="url" id="comp-website" class="form-control" placeholder="https://www.tcs.com" maxlength="255">
+                    <span class="field-error" id="err-comp-website"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="comp-desc">Company Overview &amp; Domain <span class="required">*</span></label>
+                  <textarea id="comp-desc" class="form-control" rows="3" placeholder="Describe the company domain, recruitment profiles, and operations..." required maxlength="2000"></textarea>
+                  <span class="field-error" id="err-comp-desc"></span>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="comp-email">HR Contact Email</label>
+                    <input type="email" id="comp-email" class="form-control" placeholder="campus@company.com" maxlength="150">
+                    <span class="field-error" id="err-comp-email"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="comp-phone">HR Contact Phone</label>
+                    <input type="text" id="comp-phone" class="form-control" placeholder="+91-80-12345678" maxlength="50">
+                    <span class="field-error" id="err-comp-phone"></span>
+                  </div>
+                </div>
+                <div style="display:flex;gap:0.75rem;align-items:center;margin-top:0.5rem">
+                  <button type="submit" id="comp-save-btn" class="btn btn-primary">Save Company Record</button>
+                  <button type="button" id="comp-cancel-btn" class="btn btn-secondary hidden">Cancel Edit</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Registered Companies Directory</div>
+                  <p class="card-subtitle">Active and past recruitment partners</p>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Company Name</th>
+                      <th>Overview</th>
+                      <th>Website</th>
+                      <th>HR Contact</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="officer-companies-tbody">
+                    <tr><td colspan="6" style="text-align:center;color:var(--text-muted)">Loading companies...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Officer Drives Tab -->
+          <div id="officer-tab-drives" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title" id="drive-form-title">Create Campus Placement Drive</div>
+                  <p class="card-subtitle">Configure minimum CGPA cutoff, eligible branches, compensation package, and deadline</p>
+                </div>
+              </div>
+              <form id="officer-drive-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="drive-company-id">Recruiting Company <span class="required">*</span></label>
+                    <select id="drive-company-id" class="form-control" required>
+                      <option value="">-- Select Company --</option>
+                    </select>
+                    <span class="field-error" id="err-drive-company-id"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="drive-title">Job Title <span class="required">*</span></label>
+                    <input type="text" id="drive-title" class="form-control" placeholder="e.g. Associate Software Engineer" required maxlength="150">
+                    <span class="field-error" id="err-drive-title"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="drive-desc">Job Description &amp; Responsibilities <span class="required">*</span></label>
+                  <textarea id="drive-desc" class="form-control" rows="3" placeholder="Job details, role responsibilities, and interview instructions..." required maxlength="5000"></textarea>
+                  <span class="field-error" id="err-drive-desc"></span>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="drive-package">Annual Compensation (LPA) <span class="required">*</span></label>
+                    <input type="number" step="0.01" id="drive-package" class="form-control" placeholder="7.00" min="0" max="9999" required>
+                    <span class="field-error" id="err-drive-package"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="drive-location">Work Location <span class="required">*</span></label>
+                    <input type="text" id="drive-location" class="form-control" placeholder="e.g. Hyderabad / Bengaluru" required maxlength="150">
+                    <span class="field-error" id="err-drive-location"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="drive-cgpa">Minimum Cutoff CGPA (0 - 10)</label>
+                    <input type="number" step="0.01" id="drive-cgpa" class="form-control" placeholder="7.00" min="0" max="10">
+                    <span class="field-error" id="err-drive-cgpa"></span>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="drive-branches">Eligible Branches <span class="required">*</span></label>
+                    <input type="text" id="drive-branches" class="form-control" placeholder="e.g. CSE, IT, ECE (or ALL)" required maxlength="255">
+                    <span class="field-error" id="err-drive-branches"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="drive-batch">Target Graduation Batch <span class="required">*</span></label>
+                    <input type="number" id="drive-batch" class="form-control" placeholder="2022" min="2000" max="2100" required>
+                    <span class="field-error" id="err-drive-batch"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="drive-skills">Required Skills <span class="required">*</span></label>
+                  <input type="text" id="drive-skills" class="form-control" placeholder="e.g. Java, Python, SQL, Data Structures" required maxlength="2000">
+                  <span class="field-error" id="err-drive-skills"></span>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="drive-deadline">Application Deadline <span class="required">*</span></label>
+                    <input type="datetime-local" id="drive-deadline" class="form-control" required>
+                    <span class="field-error" id="err-drive-deadline"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="drive-date">Placement / Interview Date <span class="required">*</span></label>
+                    <input type="date" id="drive-date" class="form-control" required>
+                    <span class="field-error" id="err-drive-date"></span>
+                  </div>
+                </div>
+
+                <div class="form-group" style="display:flex;align-items:center;gap:0.5rem;margin-top:0.25rem">
+                  <input type="checkbox" id="drive-publish-check" style="width:16px;height:16px">
+                  <label for="drive-publish-check" style="font-size:0.875rem;cursor:pointer">Publish drive immediately (visible to eligible students)</label>
+                </div>
+
+                <div style="display:flex;gap:0.5rem;align-items:center">
+                  <button type="submit" id="drive-save-btn" class="btn btn-primary">Create Drive (adds 4 default rounds)</button>
+                  <button type="button" id="drive-cancel-btn" class="btn btn-secondary hidden">Cancel Edit</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Placement Drives Directory</div>
+                  <p class="card-subtitle">Manage visibility, applications, and multi-round selection</p>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Job Title &amp; Company</th>
+                      <th>Package (LPA)</th>
+                      <th>Eligibility Criteria</th>
+                      <th>Visibility</th>
+                      <th>Status</th>
+                      <th>Gated Results</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="officer-drives-tbody">
+                    <tr><td colspan="7" style="text-align:center;color:var(--text-muted)">Loading drives...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Officer Applications Tab -->
+          <div id="officer-tab-applications" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Candidate Applications Review</div>
+                  <p class="card-subtitle">Verify academic criteria and approve or reject submissions</p>
+                </div>
+                <div class="header-action-wrap">
+                  <select id="officer-app-drive-select" class="form-control header-select-control">
+                    <option value="">All Drives</option>
+                  </select>
+                  <select id="officer-app-status-select" class="form-control header-select-control">
+                    <option value="">All Statuses</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Under Review">Under Review</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="Not Eligible">Not Eligible</option>
+                  </select>
+                  <button type="button" id="officer-bulk-approve-btn" class="btn btn-primary btn-sm" title="Verify & approve all eligible candidates for selected drive">
+                    Approve All Eligible
+                  </button>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Student Name</th>
+                      <th>Roll &amp; Academic Info</th>
+                      <th>Placement Drive</th>
+                      <th>Eligibility Check</th>
+                      <th>Status</th>
+                      <th>Applied On</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="officer-apps-tbody">
+                    <tr><td colspan="7" style="text-align:center;color:var(--text-muted)">Loading applications...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Officer Shortlist Tab -->
+          <div id="officer-tab-shortlist" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Ranked Shortlist Generator</div>
+                  <p class="card-subtitle">Automatically rank approved candidates by descending CGPA with roll-number tie-breaking</p>
+                </div>
+              </div>
+              <form id="officer-shortlist-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="shortlist-drive-id">Select Drive <span class="required">*</span></label>
+                    <select id="shortlist-drive-id" class="form-control" required onchange="Officer.loadShortlistForDrive(this.value)">
+                      <option value="">-- Select Drive --</option>
+                    </select>
+                    <span class="field-error" id="err-shortlist-drive-id"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="shortlist-cgpa-override">Min CGPA Cutoff Override (Optional)</label>
+                    <input type="number" step="0.01" id="shortlist-cgpa-override" class="form-control" placeholder="e.g. 8.00" min="0" max="10">
+                    <span class="field-error" id="err-shortlist-cgpa-override"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="shortlist-max-candidates">Max Candidates to Shortlist</label>
+                    <input type="number" id="shortlist-max-candidates" class="form-control" placeholder="e.g. 20" min="1">
+                    <span class="field-error" id="err-shortlist-max-candidates"></span>
+                  </div>
+                </div>
+                <button type="submit" id="shortlist-generate-btn" class="btn btn-primary">Generate Ranked Shortlist</button>
+              </form>
+            </div>
+
+            <div id="officer-shortlist-results"></div>
+          </div>
+
+          <!-- Officer Rounds Tab -->
+          <div id="officer-tab-rounds" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Placement Rounds &amp; Candidate Evaluation</div>
+                  <p class="card-subtitle">Manage online tests, technical interviews, score candidates, and publish round results</p>
+                </div>
+                <div class="header-action-wrap">
+                  <select id="officer-rounds-drive-select" class="form-control header-select-control">
+                    <option value="">-- Select Drive --</option>
+                  </select>
+                </div>
+              </div>
+              <div id="officer-rounds-content">
+                <div class="alert alert-info">Please select a placement drive above to manage rounds and score applicants.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Officer Final Results Tab -->
+          <div id="officer-tab-results" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Final Selection Decisions &amp; Job Offers</div>
+                  <p class="card-subtitle">Record official selections, offered CTC packages (LPA), and publish final results</p>
+                </div>
+                <div class="header-action-wrap">
+                  <select id="officer-results-drive-select" class="form-control header-select-control">
+                    <option value="">-- Select Drive --</option>
+                  </select>
+                </div>
+              </div>
+              <div id="officer-results-content">
+                <div class="alert alert-info">Please select a placement drive above to manage final selections.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Officer Student Directory Tab -->
+          <div id="officer-tab-directory" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Student Directory <span id="dir-count" style="font-weight:normal;font-size:0.875rem;color:var(--text-muted)"></span></div>
+                  <p class="card-subtitle">Browse student profiles, search by skills/roll number, and update official CGPA</p>
+                </div>
+              </div>
+              <div class="filter-row">
+                <div class="form-group form-group-search">
+                  <input type="text" id="dir-search" class="form-control" placeholder="Search by name, roll no, skills, email...">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="dir-dept" class="form-control" placeholder="Branch (e.g. CSE)">
+                </div>
+                <div class="form-group">
+                  <input type="number" step="0.1" id="dir-cgpa" class="form-control" placeholder="Min CGPA">
+                </div>
+                <div class="form-group">
+                  <input type="number" id="dir-batch" class="form-control" placeholder="Batch Year">
+                </div>
+                <div class="form-group form-group-btn">
+                  <button id="dir-search-btn" class="btn btn-primary btn-block">Filter</button>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Roll Number</th>
+                      <th>Student Name</th>
+                      <th>Campus Email</th>
+                      <th>Branch</th>
+                      <th>Batch</th>
+                      <th>CGPA</th>
+                      <th>Skills</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="officer-directory-tbody">
+                    <tr><td colspan="7" style="text-align:center;color:var(--text-muted)">Loading students...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Officer Announcements Tab -->
+          <div id="officer-tab-announcements" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Broadcast Placement Notice</div>
+                  <p class="card-subtitle">Dispatch real-time in-portal notifications to all students or target drive applicants</p>
+                </div>
+              </div>
+              <form id="officer-announce-form" novalidate>
+                <div class="form-group">
+                  <label class="form-label" for="announce-drive-id">Target Audience</label>
+                  <select id="announce-drive-id" class="form-control">
+                    <option value="">All Registered Students</option>
+                  </select>
+                  <span class="form-hint">Choose a specific drive to notify only its applicants, or select All Registered Students.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="announce-title">Subject Line <span class="required">*</span></label>
+                  <input type="text" id="announce-title" class="form-control" placeholder="e.g. Online Assessment Slot Timings" required maxlength="150">
+                  <span class="field-error" id="err-announce-title"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="announce-msg">Notice Body <span class="required">*</span></label>
+                  <textarea id="announce-msg" class="form-control" rows="4" placeholder="Write notice details..." required maxlength="2000"></textarea>
+                  <span class="field-error" id="err-announce-msg"></span>
+                </div>
+                <button type="submit" id="announce-send-btn" class="btn btn-primary">Broadcast Notice</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Officer Account Management Tab -->
+          <div id="officer-tab-officers" class="tab-pane hidden">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Create Additional Placement Officer</div>
+                  <p class="card-subtitle">Authorize additional administrative officers for the placement cell</p>
+                </div>
+              </div>
+              <form id="officer-create-account-form" novalidate>
+                <div class="form-group">
+                  <label class="form-label" for="officer-new-name">Officer Full Name <span class="required">*</span></label>
+                  <input type="text" id="officer-new-name" class="form-control" placeholder="e.g. Dr. Rajesh Kumar" required maxlength="120">
+                  <span class="field-error" id="err-officer-new-name"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="officer-new-email">Officer Email Address <span class="required">*</span></label>
+                  <input type="email" id="officer-new-email" class="form-control" placeholder="officer@campus.edu.in" required maxlength="150">
+                  <span class="field-error" id="err-officer-new-email"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="officer-new-password">Password (8-72 chars with letters and numbers) <span class="required">*</span></label>
+                  <div class="password-wrap">
+                    <input type="password" id="officer-new-password" class="form-control" placeholder="••••••••" minlength="8" maxlength="72" required>
+                    <button type="button" class="toggle-pw eye-btn" data-target="officer-new-password" aria-label="Show password" title="Show password">
+                      <svg class="eye-icon eye-show" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                      <svg class="eye-icon eye-hide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/></svg>
+                    </button>
+                  </div>
+                  <span class="field-error" id="err-officer-new-password"></span>
+                </div>
+                <button type="submit" id="officer-new-btn" class="btn btn-primary">Create Officer Account</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Officer Password Tab -->
+          <div id="officer-tab-password" class="tab-pane hidden">
+            <div class="card card-narrow">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Security &amp; Change Password</div>
+                  <p class="card-subtitle">Update your officer account credentials</p>
+                </div>
+              </div>
+              <form class="cp-form" novalidate>
+                <div class="form-group">
+                  <label class="form-label">Current Password <span class="required">*</span></label>
+                  <div class="password-wrap">
+                    <input type="password" name="current" class="form-control" required>
+                    <button type="button" class="toggle-pw eye-btn" data-target-name="current" aria-label="Show password" title="Show password">
+                      <svg class="eye-icon eye-show" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                      <svg class="eye-icon eye-hide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/></svg>
+                    </button>
+                  </div>
+                  <span class="field-error"></span>
+                  <span class="form-hint">Officer: default initial password is college@123.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">New Password (minimum 6 characters) <span class="required">*</span></label>
+                  <div class="password-wrap">
+                    <input type="password" name="new" class="form-control" minlength="6" maxlength="72" required>
+                    <button type="button" class="toggle-pw eye-btn" data-target-name="new" aria-label="Show password" title="Show password">
+                      <svg class="eye-icon eye-show" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                      <svg class="eye-icon eye-hide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/></svg>
+                    </button>
+                  </div>
+                  <span class="field-error"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Confirm New Password <span class="required">*</span></label>
+                  <div class="password-wrap">
+                    <input type="password" name="confirm" class="form-control" minlength="6" maxlength="72" required>
+                    <button type="button" class="toggle-pw eye-btn" data-target-name="confirm" aria-label="Show password" title="Show password">
+                      <svg class="eye-icon eye-show" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                      <svg class="eye-icon eye-hide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/></svg>
+                    </button>
+                  </div>
+                  <span class="field-error"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Password</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/student.js"></script>
+  <script src="/js/officer.js"></script>
+  <script src="/js/app.js"></script>
+
+</body>
+</html>
