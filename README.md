@@ -1,6 +1,6 @@
-# 🎓 Campus Placement Management Portal
+# 🎓 College Placement Management Portal
 
-A web-based **Campus Placement Management Portal** designed to simplify and automate the college placement process. The system connects students and placement officers through a centralized platform where students can explore placement opportunities, apply for eligible drives, track application progress and view final selections.
+A web-based **College Placement Management Portal** designed to simplify and automate the college placement process. The system connects students and placement officers through a centralized platform where students can explore placement opportunities, apply for eligible drives, track application progress and view final selections.
 
 Placement officers can manage companies, placement drives, student applications, shortlists, interview rounds and final results through a dedicated dashboard.
 
@@ -220,7 +220,7 @@ Open your browser and visit:
 
 **http://localhost:3000**
 
-The Campus Placement Management Portal is now ready to use.
+The College Placement Management Portal is now ready to use.
 
 ---
 
@@ -352,7 +352,7 @@ Do not execute these commands on a database containing important production data
 
 ## 🎯 Project Objective
 
-The main objective of the Campus Placement Management Portal is to make the college placement process more organized, transparent and efficient.
+The main objective of the College Placement Management Portal is to make the college placement process more organized, transparent and efficient.
 
 It reduces manual work for placement officers and provides students with a centralized platform to access placement opportunities and monitor their progress.
 
@@ -360,7 +360,7 @@ It reduces manual work for placement officers and provides students with a centr
 
 ## 👨‍💻 Project Information
 
-**Project:** Campus Placement Management Portal
+**Project:** College Placement Management Portal
 
 **Domain:** Web Development
 
@@ -383,6 +383,6 @@ This project is developed for academic and educational purposes.
 ---
 
 <p align="center">
-  <b>Campus Placement Management Portal</b><br>
-  Simplifying Campus Recruitment Through Technology.
+  <b>College Placement Management Portal</b><br>
+  Simplifying College Recruitment Through Technology.
 </p>
